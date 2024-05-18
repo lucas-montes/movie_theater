@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+{% block title %}{{movies.title}}{% endblock %}
+
+{% block body %}
+
+<div class="row featurette">
+    <div class="col-md-9">
+        <h2 class="featurette-heading">
+            {{movie.title}}
+        </h2>
+        <p class="lead">
+            {{movie.description}}
+        </p>
+        <a class="btn btn-primary" href="{{movie.url}}" target="_blank">Regarder</a>
+    </div>
+    <div class="col-md-3">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300"
+            height="100" src="{{movie.image}}" role="img" aria-label="Placeholder: 500x500" focusable="false">
+        <title>{{movie.title}}</title>
+        </img>
+
+    </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+        {% for actor in movie.actors.all %}
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>{{actor.name}}</title>
+                <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
+                    dy=".3em">140x140</text>
+            </svg>
+
+            <h2><a href="{% url 'actor' actor.slug %}">{{actor.name}}</a></h2>
+        </div>
+        {% endfor %}
+
+    </div><!-- /.row -->
+
+
+</div><!-- /.container -->
+
+{% endblock %}
