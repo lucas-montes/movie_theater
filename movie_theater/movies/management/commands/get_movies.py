@@ -53,5 +53,5 @@ def movies_from_parquet():
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        movies_from_parquet()
+        # movies_from_parquet()
         pass

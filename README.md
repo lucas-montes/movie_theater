@@ -8,7 +8,7 @@ Password: admin
 ## Prerequis
 1. Ajouter 192.168.1.16 au dns pour acceder au site web
 
-2. Avoir une facon de modifier le code
+2. Avoir une façon de modifier le code
 - [git](https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git)
 - editeur de code
 
@@ -47,7 +47,7 @@ Password: admin
 - [ ] On veut des filtres plus complex afin de mieux trouver des films (But: Design de base de données + REST API endpoints)
 
 - [ ] Avoir plusieures sources pour regarder les films
-- [ ] Avoir une facon de savoir si une source est toujours active
+- [ ] Avoir une façon de savoir si une source est toujours active
 
 #### Saga
 
@@ -60,3 +60,15 @@ Password: admin
 ### Frontend
 
 - [ ] On veut améliorer l'interface (But: UI/UX design)
+
+## Docker
+
+### Build
+```bash
+docker build -t cinema .
+```
+
+### Run
+```bash
+docker run -d -p 8001:8001 --name cinema cinema
+```
